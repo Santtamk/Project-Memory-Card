@@ -5,8 +5,8 @@ const Card = (props) => {
   return (
     <div>
         <figure>
-            <img src={props.image} alt={props.title}/>
-        <figcaption>{props.title}</figcaption>
+            <img src={props.image} alt={props.name}/>
+        <figcaption>{props.name}</figcaption>
         </figure>
     </div>
   )

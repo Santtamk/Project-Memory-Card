@@ -4,10 +4,14 @@ figure {
     overflow: hidden;
     cursor: pointer;
     grid-template-columns: auto auto auto auto;
+    width: 120px;
+    height: 160px;
   }
   figure > * {
     grid-area: 1/1;
     transition: .4s;
+    width: 120px;
+    height: 160px;
   }
   figure figcaption {
     display: grid;
@@ -38,7 +42,7 @@ figure {
      color: #fff;
     }
   }
-  
+/*   
   body {
     margin: 0;
     min-height: 100vh;
@@ -46,4 +50,4 @@ figure {
     grid-auto-flow: column;
     place-content: center;
     background: #425a52;
-  }
+  } */
