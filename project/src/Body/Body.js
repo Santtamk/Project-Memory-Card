@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Card/Card'
-// import data from '../../public/apidata.json'
+// import data from '/apidata.json'
 
 const Body = () => {
 
@@ -25,7 +25,7 @@ useEffect(()=> {
     <div>
       {images.map((image) => (
         <div key={image.id}>
-          <Card image={image.image} name={image.name}/>
+          <Card image={image.src} name={image.name}/>
         </div>
       ))}
       </div>
