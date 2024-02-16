@@ -15,7 +15,6 @@ const Body = () => {
       try {
         const response = await fetch("/apidata.json");
         const data = await response.json();
-        // console.log(data)
         setImages(data);
       } catch (err) {
         console.error(err);
@@ -29,7 +28,7 @@ const Body = () => {
     // when we click on card it runs Math.random so that the card shuffles
     //using the Fisher-Yates shuffle algorithm
     const shuffleImages = [...images];
-    // console.log('before:' + shuffleImages)
+
     for (let i = shuffleImages.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffleImages[i], shuffleImages[j]] = [
@@ -37,19 +36,21 @@ const Body = () => {
         shuffleImages[i],
       ];
     }
+    // we get the random image here 
     setImages([...shuffleImages]);
 
+    //here we set a condition to keep track of the current score and best score by using an array to save the id 
     if (score.includes(clickedId)) {
+      // array score does include the id then we reset the array and current score 
       setScore([]);
       setCurrentScore(0);
-    } else if (!score.includes(clickedId) || score.length === 0) {
+    } else if (!score.includes(clickedId)) {
+      //if array does not include the id, we add the id to array, update the current score and best score 
       setScore((prevScore)=>[...prevScore, clickedId]);
       setCurrentScore((prevCurrentScore)=> prevCurrentScore + 1);
-      setBestScore((prevBestScore) => Math.max(bestScore, currentScore))
+      setBestScore((prevBestScore) => Math.max(bestScore, currentScore+1))
     }
   };
-  console.log("score: " + currentScore);
-  console.log("bestScore: " + bestScore);
 
   return (
     <div>
